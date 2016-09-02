@@ -14,6 +14,7 @@ get-mariadb-repo:
     - humanname: MariaDB Repo
     - name: deb {{ mariadb.repo }}{{ mariadb.repo_version }}/ubuntu {{ salt['grains.get']('oscodename', 'trusty') }} main
     - keyserver: keyserver.ubuntu.com
+    - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh_db: True
     - require_in:
@@ -25,6 +26,7 @@ get-mariadb-repo:
     - humanname: MariaDB Repo
     - name: deb {{ mariadb.repo }}{{ mariadb.repo_version }}/debian {{ salt['grains.get']('oscodename', 'trusty') }} main
     - keyserver: keyserver.ubuntu.com
+    - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh_db: True
     - require_in:
