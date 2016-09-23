@@ -5,8 +5,10 @@ include:
   - mariadb.install
 
 install-mariadb:
-pkg.installed:
-  - name: {{ mariadb.server }}
+  pkg.installed:
+    - name: {{ mariadb.server }}
+    - require:
+      - get-mariadb-repo
 
 
 {% if mariadb.service_provider == 'runit' %}

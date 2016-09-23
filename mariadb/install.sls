@@ -14,8 +14,6 @@ get-mariadb-repo:
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh_db: True
-    - require_in:
-      - pkg: install-mariadb
 
 {% elif os_family == 'Debian' %}
 get-mariadb-repo:
@@ -26,8 +24,6 @@ get-mariadb-repo:
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh_db: True
-    - require_in:
-      - pkg: install-mariadb
 
 {% elif os_family == 'Redhat' %}
 get-mariadb-repo:
