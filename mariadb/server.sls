@@ -4,6 +4,11 @@
 include:
   - mariadb.install
 
+install-mariadb:
+pkg.installed:
+  - name: {{ mariadb.server }}
+
+
 {% if mariadb.service_provider == 'runit' %}
 runit_service_file:
   file.managed:

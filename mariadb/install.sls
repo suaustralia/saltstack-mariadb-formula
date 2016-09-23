@@ -4,9 +4,6 @@
 {% set os = salt['grains.get']('os', None) %}
 {% set os_family = salt['grains.get']('os_family', None) %}
 
-install-mariadb:
-  pkg.installed:
-    - name: {{ mariadb.server }}
 
 {% if os == 'Ubuntu' %}
 get-mariadb-repo:
