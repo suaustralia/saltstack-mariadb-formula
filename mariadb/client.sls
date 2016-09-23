@@ -7,4 +7,5 @@ include:
 install-mariadb-client:
   pkg.installed:
     - name: {{ mariadb.client }}
-    - require: get-mariadb-repo
+    - require:
+      - get-mariadb-repo
