@@ -13,7 +13,7 @@ get-mariadb-repo:
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
-    - refresh_db: True
+    - refresh: True
 
 {% elif os_family == 'Debian' %}
 get-mariadb-repo:
@@ -23,7 +23,7 @@ get-mariadb-repo:
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
-    - refresh_db: True
+    - refresh: True
 
 {% elif os_family == 'Redhat' %}
 get-mariadb-repo:
