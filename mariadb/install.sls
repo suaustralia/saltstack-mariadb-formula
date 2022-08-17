@@ -14,6 +14,7 @@ get-mariadb-repo:
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh: True
+    - clean_file: True
 
 {% elif os_family == 'Debian' %}
 get-mariadb-repo:
@@ -24,6 +25,7 @@ get-mariadb-repo:
     - file: /etc/apt/sources.list.d/mariadb.list
     - keyid: F1656F24C74CD1D8
     - refresh: True
+    - clean_file: True
 
 {% elif os_family == 'Redhat' %}
 get-mariadb-repo:
