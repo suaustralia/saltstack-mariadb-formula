@@ -7,6 +7,7 @@ include:
 install-mariadb:
   pkg.installed:
     - name: {{ mariadb.server }}
+    - version: '>={{ mariadb.repo_version }}'
     - require:
       - get-mariadb-repo
 
