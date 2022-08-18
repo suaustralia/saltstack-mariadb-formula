@@ -8,10 +8,10 @@
 {% if os == 'Ubuntu' %}
 get-mariadb-repo:
   pkgrepo.managed:
-    - humanname: MariaDB Repo
+    - humanname: MariaDB Repo {{ mariadb.repo_version }}
     - name: deb {{ mariadb.repo }}{{ mariadb.repo_version }}/ubuntu/ {{ salt['grains.get']('oscodename', 'trusty') }} main
     - keyserver: keyserver.ubuntu.com
-    - file: /etc/apt/sources.list.d/mariadb.list
+    - file: /etc/apt/sources.list.d/mariadb.{{ mariadb.repo_version }}.list
     - keyid: F1656F24C74CD1D8
     - refresh: True
     - clean_file: True
@@ -19,10 +19,10 @@ get-mariadb-repo:
 {% elif os_family == 'Debian' %}
 get-mariadb-repo:
   pkgrepo.managed:
-    - humanname: MariaDB Repo
+    - humanname: MariaDB Repo {{ mariadb.repo_version }}
     - name: deb {{ mariadb.repo }}{{ mariadb.repo_version }}/debian/ {{ salt['grains.get']('oscodename', 'trusty') }} main
     - keyserver: keyserver.ubuntu.com
-    - file: /etc/apt/sources.list.d/mariadb.list
+    - file: /etc/apt/sources.list.d/mariadb.{{ mariadb.repo_version }}.list
     - keyid: F1656F24C74CD1D8
     - refresh: True
     - clean_file: True
@@ -30,7 +30,7 @@ get-mariadb-repo:
 {% elif os_family == 'Redhat' %}
 get-mariadb-repo:
   pkgrepo.managed:
-    - humanname: MariaDB Repo
+    - humanname: MariaDB Repo {{ mariadb.repo_version }}
     - baseurl: {{ mariadb.repo }}{{ mariadb.repo_version }}/{{ mariadb.repo_dir }}
 	- skip_if_unavailable: True
 	- enabled: 1
